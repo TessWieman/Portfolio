@@ -1,0 +1,889 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+    --color-white: white;
+    --color-black: black;
+    --color-blue: #4C62B7;
+    --color-beige: #FAF6ED;
+}
+
+/********/
+/* body */
+/********/
+body {
+    /* werkt niet */
+    font-family: 'Merriweather', serif; 
+    background-color: var(--color-beige);
+    color: var(--color-blue);
+
+}
+
+/**********/
+/* images */
+/**********/
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+/**********/
+/* video */
+/**********/
+video {
+    width: 100%;
+    height: auto;
+}
+
+
+/*********/
+/* anker */
+/*********/
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #aa0caa;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.Back {
+    font-size: large;
+    font-weight: bold;
+
+    margin-top: 2em;
+}
+
+/**********/
+/* button */
+/**********/
+button {
+    border: none;
+}
+
+
+/***************/
+/* header nav */
+/**************/
+header {
+    display: block;
+    background-color: var(--color-blue);
+    color: var(--color-beige);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    position: sticky; 
+    top: 0;
+}
+
+header h1 {
+    margin-left: .5em;
+}
+
+nav ul li:last-of-type{
+    margin-right: 1em;
+}
+
+header img {
+    width: 2em;
+}
+
+header button {
+    background-color:var(--color-blue);
+    color:var(--color-beige);
+}
+
+header a {
+    color:var(--color-beige);
+}
+
+nav button {
+    margin: 1em 0em 0em 1em;
+}
+
+nav a {
+    line-height: 2.5em;
+}
+
+
+/********************************************************/
+/* hamburger menu ***************************************
+/* Codepen.io https://codepen.io/TessWieman/pen/ByBoLNW */
+/********************************************************/
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    translate: 100% 0%;
+
+    transition:translate .3s;
+}
+
+/* als menu open is */
+nav.toonMenu {
+	translate:0% 0%;
+    display: block;
+    background-color: var(--color-blue);
+}
+
+
+/****************************************************************/
+/* styling voor de header als de browser minimaal 38em breed is */
+/****************************************************************/
+@media (min-width:744px) {
+    header > button {
+      display:none;
+    }
+    
+    nav {
+      position:static;
+      translate:unset;
+      padding:0;
+      background:none;
+    }
+    
+    nav button {
+      display:none;
+    }
+    
+    nav ul {
+      display:flex;
+      gap:1em;
+    }
+    
+    nav a {
+      flex-direction:column;
+      border:none;
+    }
+    
+    header > a:last-of-type {
+      flex-direction:column;
+    }
+  }
+
+
+/*********************/
+/* section.blokkenJ1 */
+/*********************/
+section.blokkenJ1 {
+    margin-top: 4em;
+}
+
+section.blokkenJ1 .kop3 {
+    margin-top: 2em;
+}
+
+section.blokkenJ1 li a:last-of-type, section.blokkenJ1 li h3 {
+    display: flex;
+    justify-content: center;
+}
+
+section.blokkenJ1 li h3 {
+    border-bottom: 2px solid var(--color-blue);
+    padding-bottom: .5em;
+}
+
+@media (max-width: 744px) {
+    section.blokkenJ1 li a:last-of-type {
+        margin-bottom: 2em;
+    }
+}
+
+@media (min-width: 744px) {
+    section.blokkenJ1 ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 1em;
+    }
+
+    section.blokkenJ1 li a:last-of-type {
+        margin-bottom: 2em;
+    }
+}
+
+@media (min-width: 1280px) {
+    section.blokkenJ1 ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 1em;
+    }
+
+    section.blokkenJ1 li:nth-of-type(3) h3 {
+        margin-top: 2.2em;
+    }
+
+    section.blokkenJ1 li:nth-of-type(4) h3 {
+        margin-top: 4.4em;
+    }
+
+    section.blokkenJ1 li a:last-of-type {
+        margin-bottom: 2em;
+    }
+}
+
+
+/***************************************/
+/* <section class="overMij-Inleiding"> */
+/***************************************/
+@media (min-width: 744px) {
+    section.overMij-Inleiding {
+        display: grid;
+        grid-template-columns: .5fr 1fr;
+        grid-template-rows: .1fr 1fr;
+        column-gap: 2em;
+        margin-bottom: 2em;
+    }
+    
+    section.overMij-Inleiding h2 {
+        grid-column-start: 2;
+    }
+    
+    section.overMij-Inleiding img {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-row-end: -1;
+    }
+    
+    section.overMij-Inleiding p {
+        grid-column-start: 2;
+        grid-row-start: 2;
+        grid-row-end: -1;
+    }
+}
+
+
+
+/******************************************/
+/* <section class="overMij-vaardigheden"> */
+/******************************************/
+section.overMij-vaardigheden h3 {
+    margin-top: 4em;
+}
+
+section.overMij-vaardigheden ul {
+    list-style: circle;
+}
+
+
+/**************************************/
+/* <section class="overMij-ambities"> */
+/**************************************/
+section.overMij-ambities h3 {
+    margin-top: 4em;
+}
+
+section.overMij-ambities {
+    margin-bottom: 4em;
+}
+
+
+/***********************************/
+/* <section class="inleidingCMD"> */
+/***********************************/
+
+
+/**********************************/
+/* <section class="cmd-Jaar1en2"> */
+/**********************************/
+section.cmd-Jaar1en2 {
+    margin-top: 4em;
+}
+
+
+/**************************************/
+/* <section class="cmd-Competenties"> */
+/**************************************/
+section.cmd-Competenties {
+    margin-top: 4em;
+}
+
+section.cmd-Competenties ul {
+    list-style: circle;
+}
+
+
+/************************************/
+/* <section class="cmd-Programmas"> */
+/************************************/
+section.cmd-Programmas {
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+
+.logo2 {
+    width: 25%;
+    height: auto;
+}
+
+/* section.cmd-Programmas ul {
+    display: grid;
+    grid-template-columns: 1fr .5fr 1fr .5fr 1fr .5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    row-gap: 1em;
+}
+
+section.cmd-Programmas li:nth-of-type(1) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+section.cmd-Programmas li:nth-of-type(2) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+section.cmd-Programmas li:nth-of-type(3) {
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+section.cmd-Programmas li:nth-of-type(4) {
+    grid-column-start: 7;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+section.cmd-Programmas li:nth-of-type(5) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: -1;
+}
+
+section.cmd-Programmas li:nth-of-type(6) {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: -1;
+}
+
+section.cmd-Programmas li:nth-of-type(7) {
+    grid-column-start: 6;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: -1;
+} */
+
+section.cmd-Programmas ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 1em;  
+    border-bottom: 2px solid var(--color-blue);
+    border-top: 2px solid var(--color-blue);
+    padding: 1em;
+}
+
+
+/************************************/
+/* <section class="inleidingStage"> */
+/************************************/
+
+
+
+/**************************************/
+/* <section class="focusVakgebieden"> */
+/**************************************/
+section.focusVakgebieden {
+    margin-top: 4em;
+}
+
+
+/****************************************/
+/* <section class="citeriaVoorwaarden"> */
+/****************************************/
+section.citeriaVoorwaarden {
+    margin-top: 4em;
+}
+
+section.citeriaVoorwaarden ul {
+    list-style: circle;
+}
+
+
+/*******************************/
+/* <section class="interesse"> */
+/*******************************/
+section.interesse {
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+
+
+/***********************************/
+/* <section class="inhoudContent"> */
+/***********************************/
+@media (min-width: 744px) {
+    section.inhoudContent {
+        display: grid;
+        grid-template-columns: .5fr 1fr;
+        grid-template-rows: .5fr .5fr .5fr .5fr;
+        column-gap: 2em;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+    
+    section.inhoudContent img {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-row-end: -1;
+        margin-top: 1em;
+    }
+}
+
+
+/***************************************/
+/* <section class="doelgroepContent"> */
+/**************************************/
+section.doelgroepContent {
+    margin-top: 4em;
+}
+
+
+/***************************************/
+/* <section class="contentContext"> */
+/**************************************/
+section.contentContext {
+    margin-top: 4em;
+}
+
+
+/***********************************/
+/* <section class="contentProces"> */
+/***********************************/
+section.contentProces {
+    margin-top: 4em;
+}
+
+@media (min-width: 744px) {
+    section.contentProces {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: .05fr .6fr .5fr;
+        column-gap: .5em;
+        row-gap: .5em;
+    }
+
+    section.contentProces h3 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+    }
+
+    section.contentProces p:nth-of-type(1) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+    }
+
+    section.contentProces video {
+        grid-column-start: 3;
+        grid-column-end: -1;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        margin-top: 1em;
+    }
+
+    section.contentProces p:nth-of-type(2) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
+    }
+
+    section.contentProces img:nth-of-type(1) {
+        grid-column-start: 3;
+        grid-column-end: -1;
+        grid-row-start: 3;
+        margin-top: 1em;
+    }
+}
+
+
+/**************************************/
+/* <section class="contentReflectie"> */
+/**************************************/
+section.contentReflectie {
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+
+
+/******************************/
+/* <section class="tekstHCI"> */
+/******************************/
+section.tekstHCI {
+    margin-top: 4em;
+}
+
+section.tekstHCI ul {
+    list-style: circle; 
+}
+
+
+/******************************/
+/* <section class="procesHCI"> */
+/******************************/
+section.procesHCI {
+    margin-top: 4em;
+}
+
+section.procesHCI ul {
+    list-style: circle;
+}
+
+
+/**********************************/
+/* <section class="reflectieHCI"> */
+/**********************************/
+section.reflectieHCI {
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+
+
+/**********************************/
+/* <section class="inleidingHCI"> */
+/**********************************/
+@media (min-width: 744px) {
+    section.inleidingHCI {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: .5fr .1fr .85fr .5fr .1fr .1fr;
+        column-gap: 2em;
+        margin-top: 2em;
+    }
+
+    section.inleidingHCI h3 {
+        grid-column-start: 2;
+        grid-column-end: -1;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    section.inleidingHCI h4:nth-of-type(2) {
+        grid-column-start: 2;
+        grid-column-end: -1;
+        grid-row-start: 5;
+        grid-row-end: 6;
+    }
+
+    section.inleidingHCI h4:nth-of-type(3) {
+        grid-column-start: 2;
+        grid-column-end: -1;
+        grid-row-start: 6;
+        grid-row-end: 7;
+    }
+    
+    section.inleidingHCI img {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-row-end: -1;
+        margin-top: 1em;
+    }
+}
+
+
+/*********************************/
+/* <section class="opdrachtHHk"> */
+/*********************************/
+section.opdrachtHHK {
+    margin-top: 4em;
+}
+
+
+/*******************************/
+/* <section class="procesHHK"> */
+/*******************************/
+section.procesHHK {
+    margin-top: 4em;
+}
+
+@media (min-width: 744px) {
+    section.procesHHK {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: .05fr 1fr;
+        column-gap: 1em;
+    }
+
+    section.procesHHK p {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    section.procesHHK video {
+        grid-column-start: 2;
+        grid-column-end: -1;
+        grid-row-start: 2;
+        grid-row-end: -1;
+    }
+}
+
+
+/**********************************/
+/* <section class="reflectieHHK"> */
+/**********************************/
+section.reflectieHHK {
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+
+
+/******************************/
+/* <section class="caseVID"> */
+/*****************************/
+section.caseVID {
+    margin-top: 4em;
+}
+
+section.procesVID {
+    margin-top: 4em;
+}
+
+
+/****************************************/
+/* <section class="procesProgrammeren"> */
+/****************************************/
+section.procesProgrammeren {
+    margin-top: 4em;
+}
+
+@media (min-width: 744px) {
+    section.procesProgrammeren {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: .05fr .05fr .05fr 1fr;
+    }
+
+    section.procesProgrammeren p:nth-of-type(1) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    section.procesProgrammeren h3:nth-of-type(2) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    section.procesProgrammeren p:nth-of-type(2) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 5;
+    }
+
+    section.procesProgrammeren video {
+        grid-column-start: 2;
+        grid-column-end: -1;
+        grid-row-start: 1;
+        grid-row-end: -1;
+        margin-top: 1em;
+    }
+}
+
+
+/*******************************/
+/* <section class="doelgroepUCD"> */
+/*******************************/
+section.doelgroepUCD {
+    margin-top: 4em;
+}
+
+
+/**********************************/
+/* <section class="opdrachtUCD"> */
+/*********************************/
+section.opdrachtUCD {
+    margin-top: 2em;
+}
+
+section.opdrachtUCD ul {
+    list-style: circle;
+}
+
+@media (min-width: 744px) {
+    section.opdrachtUCD {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: .05fr 1fr;
+        column-gap: 2em;
+    }
+
+    section.opdrachtUCD ul {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+    section.opdrachtUCD h3:last-of-type {
+        grid-column-start: 2;
+        grid-column-end: -1;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+}
+
+
+/*******************************/
+/* <section class="procesUCD"> */
+/*******************************/
+section.procesUCD {
+    margin-top: 4em;
+}
+
+
+/**********************************/
+/* <section class="welkomsTekst"> */
+/**********************************/
+@media (min-width: 744px) {
+    section.welkomsTekst {
+        display: grid;
+        grid-template-columns: .5fr 1fr;
+        grid-template-rows: .1fr .2fr 1fr;
+        column-gap: 2em;
+        margin-bottom: 2em;
+    }
+
+    section.welkomsTekst h2 {
+        grid-column-start: 2;
+        grid-column-end: -1;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    section.welkomsTekst h3 {
+        grid-column-start: 2;
+        grid-column-end: -1;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    section.welkomsTekst p {
+        grid-column-start: 2;
+        grid-column-end: -1;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    section.welkomsTekst img {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: -1;
+        margin-top: 1em;
+    }
+}
+
+
+/*********/
+/* .logo */
+/*********/
+.logo {
+    width: 15%;
+    height: auto;
+}
+
+
+/*****************************/
+/* <section class="contact"> */
+/*****************************/
+section.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: .1fr;
+    align-items: center;
+    text-align: center;
+    place-items: center;
+    margin-bottom: 4em;
+    margin-top: 2em;
+}
+
+section.contact img {
+    grid-column-start: 2;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.logo3 {
+    width: 15%;
+    height: auto;
+}
+
+
+/**********/
+/* footer */
+/**********/
+footer {
+    background-color: var(--color-blue);
+    color: var(--color-beige);
+    text-align: center;
+    padding: 1em;
+}
+
+footer a {
+    color: var(--color-beige);
+    list-style-type: none;
+}
+
+
+@media (min-width: 744px) {
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr .5fr;
+    }
+
+    footer h4 {
+        grid-column-start: 1;
+        grid-column-end: -1;
+        grid-row-start: 2;
+        grid-row-end: 4;
+
+        margin-top: 4em;
+    }
+}
+
+
+
+
+
+
+
+
+/***************/
+/* @media main */
+/***************/
+@media (min-width: 744px) {
+    main {
+        margin-left: 4em;
+        margin-right: 4em;
+        margin-top: 1em;
+    }
+}
